@@ -1,0 +1,664 @@
+:root {
+
+    --main-text-color: #d1d0d0;
+    --main-header-color: #f3f3f3;
+
+    --bg-color: #1E252B;
+    --link-color: #aaaaaa;
+
+    --bg-section-color: #8f8f8f;
+
+    --font-base: "Tinos", sans-serif;
+    --font-header: "Poppins", sans-serif;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    --box-shadow-hover: 5px 5px 10px #9e9e9ead, -5px -5px 10px #9e9e9ead;
+
+    /*Slider*/
+    --index: calc(1.5vw + 1vh);
+    --transition: cubic-bezier(0.1, 0.7, 0, 1);
+
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--main-text-color);
+    background-color: var(--bg-color);
+    line-height: 1.1;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-header);
+    color: var(--main-header-color);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*Links*/
+a {
+    color: var(--link-color);
+    font-family: var(--font-base);
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 20px;
+    transition: all 0.4s;
+}
+li a:hover {
+    color: var(--main-text-color);
+    padding: 2px 1px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75) inset, -5px -5px 5px 0px rgba(27, 27, 27, 0.75) inset;
+}
+
+
+.container {
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Buttons*/
+a.btn,
+button.btn {
+    width: fit-content;
+    padding: 5px 5px;
+
+    color: var(--link-color);
+    font-family: var(--font-base);
+    font-weight: 700;
+    letter-spacing: 3px;
+    background-color: var(--bg-color);
+
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px #000000, -1px -1px 10px #5c5c5cad;
+
+    transition: all 0.4s;
+}
+
+.form-button {
+    text-align: center;
+}
+
+a.btn:hover,
+button.btn:hover {
+    color: var(--main-header-color);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/*----------------------------Encabezado-----------------------------------*/
+.header {
+    padding: 20px 0;
+    box-shadow: 2px 5px 10px #000000, -1px -1px 10px #5c5c5cad;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--main-header-color);
+
+    transition: all .4s;
+}
+.logo:hover {
+    text-shadow: var(--box-shadow-hover);
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+}
+
+
+/*-------------------------------Sección Hero---------------------------*/
+.hero-grid {
+    display: grid;
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content p {
+    padding-bottom: 20px;
+}
+
+/*-------------------------------Slider--------------------------------*/
+.slider {
+    display: flex;
+    gap: 0.4rem;
+    perspective: calc(var(--index) *35);
+    /*работает по оси z / opera en el eje z*/
+}
+
+.item {
+    width: calc(var(--index) *3);
+    height: calc(var(--index) *12);
+
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+
+    filter: grayscale(1) brightness(0.5);
+
+    transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
+
+    will-change: transform, filter, rotatY, width;
+    /*браузер будет обрабатывать в первую очередь / el navegador procesará primero*/
+}
+
+
+.item:hover {
+    filter: inherit;
+    /*возвращаем изобре цвет / volvemos el color a imagen*/
+    transform: translateZ(calc(var(--index) * 10));
+    /*выставляем изобру на передний план / ponemos la imagen en primer plano*/
+}
+
+.item::before,
+.item::after {
+    /*создаем псевдо блоки справа и слева от изобр для плавного перехода / creamos bloques pseubo a derecha e izquierda de la imagen para lograr una transición suave*/
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: var(--index);
+    right: calc(var(--index) *-1);
+}
+
+.item::after {
+    left: calc(var(--index) *-1);
+}
+
+
+.item:hover+* {
+    /*наклон 1го блока справа, * это как обращение к следующему элементу  / inclinación del primer bloque a la derecha */
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
+    z-index: -1;
+}
+
+.item:hover+*+* {
+    /*наклон 2го блока справа, на это указывают 2 звезды    / inclinación del segundo bloque a la derecha */
+    filter: inherit;
+    transform: translateZ(calc(var(--index) *5.6)) rotateY(40deg);
+    z-index: -2;
+}
+
+
+.item:has(+ :hover) {
+    /*выбирает 1ый элемент, сосед справа от которого находится под ховером   /   elegimos el primer elemento cuyo vecino a la derecha esta bajo de hover */
+    filter: inherit;
+    transform: translateZ(calc(var(--index) *8.5)) rotateY(-35deg);
+}
+
+.item:has(+ * + :hover) {
+    /*выбирает 2ой элемент, правый сосед которого находится по ховером   / elegimos el segundo elemento cuyo vecino a la derecha esta bajo de hover*/
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
+}
+
+.item:active,
+.item:focus {
+    width: 20vw;
+    filter: inherit;
+    z-index: 100;
+    transform: translateZ(calc(var(--index) * 10));
+    margin: 0 0.45vw;
+}
+
+
+
+
+
+/*------------------------------------Sección Nosotros---------------------------------------*/
+.team-grid {
+    display: grid;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+
+    display: border-box;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px #000000, -5px -10px 20px #5c5c5cad;
+
+    transition: all .4s;
+}
+.team-grid:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+.team-member {
+    background-color: var(--bg-color);
+    width: 80%;
+    height: auto;
+    padding: 20px 30px;
+
+    text-align: center;
+    align-items: center;
+    align-self: center;
+
+    transition: all 0.5s;
+}
+
+
+.team-member p {
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--main-header-color);
+    padding-top: 10px;
+}
+
+.team-member img {
+    border-radius: 100px;
+}
+
+.team-member:hover {
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75) inset, -10px -10px 5px 0px rgba(12, 12, 12, 0.75) inset;
+    /* box-shadow: 10px 10px 5px 0px rgba(54, 53, 53, 0.75) inset, -8px -10px 5px 0px rgba(0, 0, 0, 0.75) inset;*/
+}
+
+
+
+/*-----------------------------Sección Precios--------------------------------------*/
+.pricing-grid {
+    background-color: var(--bg-color);
+
+    display: grid;
+    width: 100%;
+    height: 70vh;
+    padding: 10px;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.pricing-item {
+    background-color: var(--bg-color);
+    width: 80%;
+    height: auto;
+    padding: 20px 30px;
+    display: border-box;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    box-shadow: 10px 10px 20px #000000, -5px -10px 20px #5c5c5cad;
+
+    transition: all .4s;
+}
+.pricing-item:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+.pricing-item p {
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--main-header-color);
+    padding: 10px 0;
+}
+
+.pricing-item ul {
+    padding-bottom: 10px;
+}
+
+/*------------------------------Sección Servicios---------------------------------*/
+.servicios {
+    /*background-image: url(https://images.unsplash.com/photo-1517907217138-7283e6cec95a?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);*/
+    background-image: url(https://images.pexels.com/photos/27406/pexels-photo-27406.jpg);
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+
+
+}
+
+.servicios h2,
+.servicios h3 {
+    color: var(--bg-color);
+}
+
+.service-grid {
+    display: grid;
+    width: 100%;
+    height: 50vh;
+    padding: 10px;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.service-icon {
+    text-align: center;
+}
+
+.service-item {
+    background-color: #ffffff75;
+    color: var(--bg-color);
+    padding: 20px 30px;
+    display: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+
+    transition: all .4s;
+}
+
+.service-item:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+
+/*-----------------------------Sección Contact------------------------------*/
+.contact-grid {
+    display: grid;
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.contact-item.form {
+    background-color: var(--bg-color);
+    height: fit-content;
+    max-width: 600px;
+    width: 100%;
+
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px #000000, -5px -10px 20px #5c5c5cad;
+
+    padding: 10px;
+
+    transition: all .4s;
+}
+
+.contact-item.form:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+legend {
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-family: var(--font-header);
+    text-transform: uppercase;
+}
+
+.input-box {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label {
+    font-family: var(--font-header);
+}
+
+.input-box input,
+#comment {
+    border: 1px solid var(--main-text-color);
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 100%;
+    font-family: var(--font-base);
+}
+
+#comment {
+    height: 80px;
+}
+
+.input-box input:focus,
+#comment:focus {
+    background-color: var(--bg-section-color);
+    outline: none;
+}
+
+
+.footer {
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+/*-------------------------------------------Adaptacion-------------------------------------------*/
+
+/* Общие стили для мобильных устройств    / Estilos comunes para dispositivos móviles  */
+@media (max-width: 768px) {
+
+    /* Навигация   /   Navigación */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-login {
+        margin-top: 10px;
+    }
+
+    /* Герой-секция /  Hero-section  */
+
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .hero-content {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    /* Секция с командой  /   Team-section */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member {
+        width: 90%;
+    }
+
+    /* Секция с услугами /  Servicios */
+    .service-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .service-item {
+        width: 90%;
+    }
+
+    /* Секция с ценами /  Precios  */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .pricing-item {
+        width: 90%;
+    }
+
+    /* Секция с контактами /  Contactos  */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .contact-item iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .contact-item.form {
+        width: 90%;
+    }
+
+    /* Футер */
+    .footer {
+        padding: 10px 0;
+    }
+}
+
+/* Стили для планшетов /  Estilos para tabletas */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Навигация / Navegación */
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        gap: 15px;
+    }
+
+    /* Герой-секция  / Hero-section */
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-content {
+        text-align: left;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    /* Секция с командой  /  Team-section */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Секция с услугами /  Servicios  */
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Секция с ценами /  Precios  */
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Секция с контактами  / Contactos  */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-item iframe {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+/* Стили для десктопов   /  Estilos para ordenadores */
+@media (min-width: 1025px) {
+
+    /* Герой-секция /  Hero-section  */
+    .hero-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* Секция с командой / Team-section */
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Секция с услугами  / Servicios  */
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Секция с ценами   / Precios  */
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Секция с контактами   / Contactos  */
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Для экранов меньше 480px (мобильные) / Para pantallas inferiores a 480px (móvil) */
+    @media (max-width: 480px) {
+        .hero-content h1 {
+            font-size: 24px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .team-member,
+        .service-item,
+        .pricing-item {
+            padding: 15px;
+        }
+
+        .contact-item iframe {
+            height: 250px;
+        }
+    }
+}

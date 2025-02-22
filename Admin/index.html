@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Semyon Smyslov">
+
+    <!-- Title -->
+    <title>Admin Dashboard</title>
+
+    <!-- Styles-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <ul class="navigation__list">
+
+                <!-- LOGO change the from <li> coz its bad idea -->
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+
+                        <span class="navigation__icon"><i class="fa fa-rocket" aria-hidden="true"></i></span>
+                        <span class="navigation__title">CRM SYSTEM</span>
+                    </a>
+                </li>
+                <!-- END LOGO -->
+
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-pie-chart" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Analítica</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-barcode" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Productos</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-cubes" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Inventario</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Clientes</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-comment" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Mensajes</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Ayuda</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-cog" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Ajustes</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                        <span class="navigation__title">API</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span class="navigation__icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+                        <span class="navigation__title">Salir</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- END Navigation -->
+
+
+        <!-- Content Wrapper -->
+        <div class="main">
+            <!-- Topbar -->
+            <div class="topbar">
+                <div class="topbar__toggle" onclick="toggleMenu();"></div>
+                <div class="topbar__search">
+                    <label class="topbar__search-label">
+                        <input type="text" class="topbar__search-input" placeholder="Buscar">
+                        <i class="fa fa-search topbar__search-icon" aria-hidden="true"></i>
+                    </label>
+                </div>
+                <div class="topbar__user">
+                    <img src="./assets/img/user.jpg" alt="user-gravatar" class="topbar__user-img">
+                </div>
+            </div>
+            <!-- END Topbar -->
+
+
+            <!-- Data Cards -->
+            <div class="card-box">
+                <div class="card-box__card">
+                    <div class="card-box__content">
+                        <div class="card-box__numbers">1,442</div>
+                        <div class="card-box__title">Vistas diarias</div>
+                    </div>
+                    <div class="card-box__icon">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="card-box__card">
+                    <div class="card-box__content">
+                        <div class="card-box__numbers">75</div>
+                        <div class="card-box__title">Ventas hoy</div>
+                    </div>
+                    <div class="card-box__icon">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="card-box__card">
+                    <div class="card-box__content">
+                        <div class="card-box__numbers">8</div>
+                        <div class="card-box__title">Mensajes nuevos</div>
+                    </div>
+                    <div class="card-box__icon">
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="card-box__card">
+                    <div class="card-box__content">
+                        <div class="card-box__numbers">7,254 €</div>
+                        <div class="card-box__title">Ingresos</div>
+                    </div>
+                    <div class="card-box__icon">
+                        <i class="fa fa-euro" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- END Data Cards -->
+
+
+            <!-- Recent Orders -->
+            <div class="details">
+                <div class="details__recent-orders">
+                    <!-- Order Header -->
+                    <div class="details__header">
+                        <h2 class="details__title">Últimos pedidos</h2>
+                        <a href="#" class="details__btn">Ver todo</a>
+                    </div>
+                    <!-- Order Table -->
+                    <table class="details__table">
+                        <thead class="details__table-head">
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Nombre</td>
+                                <td class="details__table-data">Precio</td>
+                                <td class="details__table-data">Método de pago</td>
+                                <td class="details__table-data">Estado</td>
+                            </tr>
+                        </thead>
+                        <tbody class="details__table-body">
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 1</td>
+                                <td class="details__table-data">150 €</td>
+                                <td class="details__table-data">Pagado</td>
+                                <td class="details__table-data"><span class="details__status details__status--delivered">Entregado</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 2</td>
+                                <td class="details__table-data">32 €</td>
+                                <td class="details__table-data">En espera</td>
+                                <td class="details__table-data"><span class="details__status details__status--pending">Pendiente</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 3</td>
+                                <td class="details__table-data">80.56 €</td>
+                                <td class="details__table-data">Cancelado</td>
+                                <td class="details__table-data"><span class="details__status details__status--cancel">Cancelado</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 4</td>
+                                <td class="details__table-data">150 €</td>
+                                <td class="details__table-data">Pagado</td>
+                                <td class="details__table-data"><span class="details__status details__status--return">Reembolsado</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 5</td>
+                                <td class="details__table-data">150 €</td>
+                                <td class="details__table-data">Pagado</td>
+                                <td class="details__table-data"><span class="details__status details__status--delivered">Entregado</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 6</td>
+                                <td class="details__table-data">150 €</td>
+                                <td class="details__table-data">Pagado</td>
+                                <td class="details__table-data"><span class="details__status details__status--inprogress">En curso</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 7</td>
+                                <td class="details__table-data">80.56 €</td>
+                                <td class="details__table-data">Cancelado</td>
+                                <td class="details__table-data"><span class="details__status details__status--cancel">Cancelado</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 8</td>
+                                <td class="details__table-data">80.56 €</td>
+                                <td class="details__table-data">Cancelado</td>
+                                <td class="details__table-data"><span class="details__status details__status--cancel">Cancelado</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 9</td>
+                                <td class="details__table-data">150 €</td>
+                                <td class="details__table-data">Pagado</td>
+                                <td class="details__table-data"><span class="details__status details__status--inprogress">En curso</span></td>
+                            </tr>
+
+                            <tr class="details__table-row">
+                                <td class="details__table-data">Producto 10</td>
+                                <td class="details__table-data">150 €</td>
+                                <td class="details__table-data">Pagado</td>
+                                <td class="details__table-data"><span class="details__status details__status--inprogress">En curso</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- End of Recent Orders -->
+
+                <!-- Recent Customers -->
+                <div class="details__recent-customers">
+
+                    <!-- Deatails Header -->
+                    <div class="details__header">
+                        <h2 class="details__title">Últimos clientes</h2>
+                        <a href="#" class="details__btn">Ver todo</a>
+                    </div>
+                    <!-- End of Deatails Header -->
+
+                    <!-- Customer Table -->
+                    <table class="details__table">
+                        <tbody class="details__table-body">
+                            <tr class="details__table-row">
+                                <td class="details__table-data" width="60px">
+                                    <div class="details__img-box">
+                                        <img src="./assets/img/user.jpg" alt="client-gravatar" class="details__img">
+                                    </div>
+                                </td>
+                                <td class="details__table-data">
+                                    <h4 class="details__user-name">John Doe
+                                    <br>
+                                    <span class="details__user-location">España</span></h4>
+                                </td>
+                            </tr>
+                            <tr class="details__table-row">
+                                <td class="details__table-data" width="60px">
+                                    <div class="details__img-box">
+                                        <img src="./assets/img/user.jpg" alt="client-gravatar" class="details__img">
+                                    </div>
+                                </td>
+                                <td class="details__table-data">
+                                    <h4 class="details__user-name">John Doe
+                                    <br>
+                                    <span class="details__user-location">España</span></h4>
+                                </td>
+                            </tr>
+                            <tr class="details__table-row">
+                                <td class="details__table-data" width="60px">
+                                    <div class="details__img-box">
+                                        <img src="./assets/img/user.jpg" alt="client-gravatar" class="details__img">
+                                    </div>
+                                </td>
+                                <td class="details__table-data">
+                                    <h4 class="details__user-name">John Doe
+                                    <br>
+                                    <span class="details__user-location">España</span></h4>
+                                </td>
+                            </tr>
+                            <tr class="details__table-row">
+                                <td class="details__table-data" width="60px">
+                                    <div class="details__img-box">
+                                        <img src="./assets/img/user.jpg" alt="client-gravatar" class="details__img">
+                                    </div>
+                                </td>
+                                <td class="details__table-data">
+                                    <h4 class="details__user-name">John Doe
+                                    <br>
+                                    <span class="details__user-location">España</span></h4>
+                                </td>
+                            </tr>
+                            <tr class="details__table-row">
+                                <td class="details__table-data" width="60px">
+                                    <div class="details__img-box">
+                                        <img src="./assets/img/user.jpg" alt="client-gravatar" class="details__img">
+                                    </div>
+                                </td>
+                                <td class="details__table-data">
+                                    <h4 class="details__user-name">John Doe
+                                    <br>
+                                    <span class="details__user-location">España</span></h4>
+                                </td>
+                            </tr>
+                            <tr class="details__table-row">
+                                <td class="details__table-data" width="60px">
+                                    <div class="details__img-box">
+                                        <img src="./assets/img/user.jpg" alt="client-gravatar" class="details__img">
+                                    </div>
+                                </td>
+                                <td class="details__table-data">
+                                    <h4 class="details__user-name">John Doe
+                                    <br>
+                                    <span class="details__user-location">España</span></h4>
+                                </td>
+                            </tr>
+                            <tr class="details__table-row">
+                                <td class="details__table-data" width="60px">
+                                    <div class="details__img-box">
+                                        <img src="./assets/img/user.jpg" alt="client-gravatar" class="details__img">
+                                    </div>
+                                </td>
+                                <td class="details__table-data">
+                                    <h4 class="details__user-name">John Doe
+                                    <br>
+                                    <span class="details__user-location">España</span></h4>
+                                </td>
+                            </tr>
+                            <tr class="details__table-row">
+                                <td class="details__table-data" width="60px">
+                                    <div class="details__img-box">
+                                        <img src="./assets/img/user.jpg" alt="client-gravatar" class="details__img">
+                                    </div>
+                                </td>
+                                <td class="details__table-data">
+                                    <h4 class="details__user-name">John Doe
+                                    <br>
+                                    <span class="details__user-location">España</span></h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- End of Table -->
+                </div>
+                <!-- End of Recent Customers -->
+
+
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Main -->
+    </div>
+    <!-- End of Wrapper -->
+    
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        /**
+         * Toggles the sidebar and main content when the toggle button is clicked.
+         * Adds/removes the 'active' class to the toggle button, navigation, and main content.
+         * VIA SITEPOINT.COM
+         */
+        function toggleMenu() {
+            let toggle = document.querySelector('.topbar__toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            toggle.classList.toggle('topbar__toggle--active');
+            navigation.classList.toggle('navigation--active');
+            main.classList.toggle('main--active');
+        }
+    </script>
+</body>
+</html>
