@@ -62,7 +62,7 @@ li a:hover {
     max-width: 1300px;
     width: 90%;
     margin: 0 auto;
-    padding: 15px;
+    padding: 0 15px;
 }
 
 img {
@@ -239,7 +239,7 @@ button.btn:hover {
 
 /*------------------------------------Sección Nosotros---------------------------------------*/
 .nosotros {
-    padding-top: 4rem;
+    padding: 4rem 0;
 }
 .team-grid {
     display: grid;
@@ -383,6 +383,9 @@ button.btn:hover {
     backdrop-filter: blur(6px);
 
     transition: all .4s;
+}
+.service-item p {
+    text-align: center;
 }
 
 .service-item:hover {
