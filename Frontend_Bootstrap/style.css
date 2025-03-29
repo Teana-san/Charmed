@@ -39,4 +39,11 @@
         color: var(--link-color);
         font-weight: 700;
         letter-spacing: 3px;
+        transition: all 0.6s ease;
+    }
+
+    a:hover,
+    .navbar-brand:hover,
+    .nav-link:hover {
+        color: var(--main-text-color);
     }
