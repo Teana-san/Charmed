@@ -16,6 +16,10 @@
         --main-header-color: #f3f3f3;
     }
 
+    body {
+        font-family: var(--font-base);
+        color: var(--main-header-color);
+    }
 
     h1,
     h2,
@@ -27,12 +31,7 @@
         font-size: 2em;
     }
 
-    p,
-    li {
-        font-family: var(--font-base);
-        color: var(--main-text-color);
-        font-size: 1.2em;
-    }
+
 
 
     a,
@@ -60,7 +59,6 @@
 
     .custom-shadow-double:hover,
     .section-nosotros:hover {
-        color: var(--main-header-color);
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
