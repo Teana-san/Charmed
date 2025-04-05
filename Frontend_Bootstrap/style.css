@@ -27,13 +27,9 @@
         font-family: var(--font-header);
     }
 
-
-
     a,
-    .navbar-brand,
     .nav-link,
     .btn {
-        color: var(--link-color);
         letter-spacing: 3px;
         transition: all 0.6s ease;
     }
