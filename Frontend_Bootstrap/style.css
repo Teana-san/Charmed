@@ -68,7 +68,7 @@
     .carousel-item img {
         height: 80vh;
         object-fit: cover;
-    } 
+    }
 
 
 
@@ -97,5 +97,10 @@
     }
 
     .pricing-item {
-        background: linear-gradient(0deg, rgba(30, 37, 43, 1) 70%, rgb(105, 105, 105) 100%);
+        background: linear-gradient(0deg, rgba(30, 37, 43, 1) 70%, rgb(67, 67, 67) 100%);
     }
+
+    .form-control {
+        box-shadow: inset -2px -2px 11px 1px rgba(0, 0, 0, 1);
+    }
+
