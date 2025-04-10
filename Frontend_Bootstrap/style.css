@@ -102,5 +102,9 @@
 
     .form-control {
         box-shadow: inset -2px -2px 11px 1px rgba(0, 0, 0, 1);
+
     }
 
+    ::placeholder { 
+        color: #b6b6b6 !important;
+    } 
