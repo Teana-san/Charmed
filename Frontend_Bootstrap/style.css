@@ -30,15 +30,14 @@
     a,
     .nav-link,
     .btn {
-        color: var(--link-color);
+        color: var(--main-header-color);
         letter-spacing: 3px;
         transition: all 0.6s ease;
     }
 
     a:hover,
-    .navbar-brand:hover,
     .nav-link:hover {
-        color: var(--main-header-color);
+        color: var(--link-color);
     }
 
     .custom-shadow-double {
