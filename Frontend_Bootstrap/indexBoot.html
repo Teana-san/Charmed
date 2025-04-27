@@ -22,48 +22,45 @@
 
 <body class="bg-dark">
 
-    <header>
+<header>
+    <nav class="navbar navbar-expand-lg bg-dark shadow py-3 px-2 z-3 fw-bolder">
+        <div class="container">
 
+            <a class="navbar-brand text-light" href="#">COMPAÑÍA</a>
 
-        <nav class="navbar navbar-expand-lg bg-dark shadow p-2 z-3 fw-bolder">
-            <div class="container">
+            <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <a class="navbar-brand text-light col-3" href="#">COMPAÑÍA</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-                <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#precios">Precios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
 
-
-                <div class="navbar collapse navbar-collapse col-9 flex-nowrap justify-content-md-between justify-content-center flex-lg-row flex-column"
-                    id="navbarNav">
-
-                    <ul class="navbar-nav fs-5">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#nosotros">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#servicios">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#precios">Precios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contacto</a>
-                        </li>
-                    </ul>
-
-                    <a class="navbar-brand rounded-pill custom-shadow-double px-2 text-light m-0" href="#">Iniciar
-                        Sesión</a>
-
+                <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0">
+                    <a class="btn rounded-pill custom-shadow-double px-3 fs-5 fw-bold" href="#">Iniciar Sesión</a>
                 </div>
 
             </div>
-        </nav>
 
-    </header>
+        </div>
+    </nav>
+</header>
+
 
     <section class="hero">
         <section class=" justify-content-center align-items-center">
@@ -308,6 +305,7 @@
 
     <section id="contacto" class="contact py-3">
         <div class="container">
+
             <h2 class="my-4 text-center text-uppercase fw-bolder">Contacts</h2>
             <div class="contacting row gap-md-0 gap-3">
 
