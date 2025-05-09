@@ -15,6 +15,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/main.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <title>Document bootstrap</title>
 
@@ -22,44 +23,45 @@
 
 <body class="bg-dark">
 
-<header>
-    <nav class="navbar navbar-expand-lg bg-dark shadow py-3 px-2 z-3 fw-bolder">
-        <div class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark shadow py-3 px-2 z-3 fw-bolder">
+            <div class="container">
 
-            <a class="navbar-brand text-light" href="#">COMPAÑÍA</a>
+                <a class="navbar-brand text-light" href="#">COMPAÑÍA</a>
 
-            <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav">
 
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 text-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#nosotros">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#precios">Precios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#nosotros">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#precios">Precios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
 
-                <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0">
-                    <a class="btn rounded-pill custom-shadow-double px-3 fs-5 fw-bold" href="../Admin/index.html">Iniciar Sesión</a>
+                    <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0">
+                        <a class="btn rounded-pill custom-shadow-double px-3 fs-5 fw-bold"
+                            href="../Admin/index.html">Iniciar Sesión</a>
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
 
     <section class="hero">
@@ -178,7 +180,8 @@
         <div class="container">
             <h2 class="my-5 text-center text-uppercase fw-bolder">Acerca de empresa</h2>
 
-            <section class="section-nosotros text-center p-4 rounded-4">
+            <section class="section-nosotros text-center p-4 rounded-4" data-aos="zoom-in" data-aos-delay="200"
+                data-aos-duration="1000">
 
                 <div class="team-info row">
 
@@ -225,10 +228,12 @@
     <section id="servicios" class="servicios py-5">
         <div class="container">
 
-            <h2 class="my-4 text-center text-dark text-uppercase fw-bolder">Servicios</h2>
-            <section class="section-servicios text-center justify-content-between p-4 rounded-4 row text-dark">
+            <h2 class="my-4 text-center text-dark text-uppercase fw-bolder" data-aos="fade-up" data-aos-duration="800">
+                Servicios</h2>
+            <section class="section-servicios text-center justify-content-between p-4 rounded-4 row text-dark gap-4">
 
-                <div class="service-item col-lg-3 col-12 rounded-4 p-4">
+                <div class="service-item col-lg-3 col-12 rounded-4 p-4" data-aos="fade-up" data-aos-delay="200"
+                    data-aos-duration="1000">
                     <div class="service-icon fs-2">🌚</div>
                     <div class="service-data">
                         <h3 class="text-dark text-uppercase fw-bolder">Lorem Ipsum</h3>
@@ -236,13 +241,15 @@
                     </div>
                 </div>
 
-                <div class="service-item col-lg-3 col-12 rounded-4 p-4">
+                <div class="service-item col-lg-3 col-12 rounded-4 p-4" data-aos="fade-up" data-aos-delay="400"
+                    data-aos-duration="1000">
                     <div class="service-icon fs-2">🍥</div>
                     <h3 class="text-dark text-uppercase fw-bolder">Lorem Ipsum</h3>
                     <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
 
-                <div class="service-item col-lg-3 col-12 rounded-4 p-4">
+                <div class="service-item col-lg-3 col-12 rounded-4 p-4" data-aos="fade-up" data-aos-delay="600"
+                    data-aos-duration="1000">
                     <div class="service-icon fs-2">💜</div>
                     <h3 class="text-dark text-uppercase fw-bolder">Lorem Ipsum</h3>
                     <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -253,14 +260,15 @@
         </div>
     </section>
 
-    <section id="precios" class="precios py-3">
+    <section id="precios" class="precios py-5">
         <div class="container">
 
             <h2 class="my-4 text-center text-uppercase fw-bolder">Tarifas</h2>
             <section
-                class="pricing text-center justify-content-lg-between justify-content-center p-4 rounded-4 row flex-lg-nowrap flex-wrap gap-3">
+                class="pricing text-center justify-content-lg-between justify-content-center p-4 rounded-4 row flex-lg-nowrap flex-wrap gap-5">
 
-                <div class="pricing-item col-12 col-md-7 col-lg-3 rounded-4 p-4 fs-5">
+                <div class="pricing-item col-12 col-md-7 col-lg-3 rounded-4 p-4 fs-5" data-aos="fade-right"
+                    data-aos-delay="200" data-aos-duration="1000">
                     <h3 class="text-uppercase fw-bolder">Plan <br> Básico</h3>
                     <p class="price">499€<span>/mes</span></p>
                     <ul class="list-unstyled">
@@ -272,7 +280,8 @@
                         class="btn btn-outline-dark text-light rounded-pill custom-shadow-double px-4 py-2 fs-5">Comprar
                         Ahora</button>
                 </div>
-                <div class="pricing-item col-12 col-md-7 col-lg-3 rounded-4 p-4 fs-5">
+                <div class="pricing-item col-12 col-md-7 col-lg-3 rounded-4 p-4 fs-5" data-aos="fade-up"
+                    data-aos-delay="200" data-aos-duration="1000">
                     <h3 class="text-uppercase fw-bolder">Plan <br> Avanzado</h3>
                     <p class="price">990€<span>/mes</span></p>
                     <ul class="list-unstyled">
@@ -284,7 +293,8 @@
                         class="btn btn-outline-dark text-light rounded-pill custom-shadow-double px-4 py-2 fs-5">Comprar
                         Ahora</button>
                 </div>
-                <div class="pricing-item col-12 col-md-7 col-lg-3 rounded-4 p-4 fs-5">
+                <div class="pricing-item col-12 col-md-7 col-lg-3 rounded-4 p-4 fs-5" data-aos="fade-left"
+                    data-aos-delay="200" data-aos-duration="1000">
                     <h3 class="text-uppercase fw-bolder text">Plan <br> Premium</h3>
                     <p class="price">1200€<span>/mes</span></p>
                     <ul class="list-unstyled">
@@ -303,13 +313,14 @@
     </section>
 
 
-    <section id="contacto" class="contact py-3">
+    <section id="contacto" class="contact py-5">
         <div class="container">
 
-            <h2 class="my-4 text-center text-uppercase fw-bolder">Contacts</h2>
-            <div class="contacting row gap-md-0 gap-3">
+            <h2 class="my-4 text-center text-uppercase fw-bolder">Contacto</h2>
+            <div class="contacting row gap-md-0 gap-4">
 
-                <div class="col-md-6 col-12 d-flex flex-column">
+                <div class="col-md-6 col-12 d-flex flex-column" data-aos="fade-right" data-aos-delay="200"
+                    data-aos-duration="1000">
                     <div class="contact-item h-100">
                         <iframe class="rounded-5 h-100 w-100"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84251.55704168537!2d-0.5381392529421191!3d38.30226876428968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd624ac64d10da33%3A0xdcb245de25b9bef1!2sAeropuerto%20de%20Alicante%20-Elche%20Miguel%20Hern%C3%A1ndez!5e0!3m2!1ses!2ses!4v1736775112000!5m2!1ses!2ses"
@@ -319,7 +330,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-12 d-flex flex-column">
+                <div class="col-md-6 col-12 d-flex flex-column" data-aos="fade-left" data-aos-delay="200"
+                    data-aos-duration="1000">
                     <div class="contact-form rounded-5 h-100 p-4">
 
                         <form class="form-main h-100 d-flex flex-column" action="/" method="post">
@@ -386,6 +398,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+    </script>
 </body>
 
 </html>
