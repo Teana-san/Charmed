@@ -10,7 +10,6 @@
         --font-base: "Tinos", sans-serif;
         --font-header: "Poppins", sans-serif;
 
-        --main-text-color: #d1d0d0;
         --link-color: #aaaaaa;
         --main-text-color: #d1d0d0;
         --main-header-color: #f3f3f3;
@@ -89,7 +88,7 @@
     }
 
     .service-item {
-        display: border-box;
+        box-sizing: border-box;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(3px);
         transition: all .3s;

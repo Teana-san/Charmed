@@ -1,0 +1,106 @@
+$font-base: "Tinos", sans-serif;
+$font-header: "Poppins", sans-serif;
+
+$link-color: #aaaaaa;
+$main-text-color: #d1d0d0;
+$main-header-color: #f3f3f3;
+
+/* Переопределяем стандартные тени Bootstrap */
+$bs-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+/* Основная тень (shadow) */
+$bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+/* Маленькая тень (shadow-sm) */
+$bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+/* Большая тень (shadow-lg) */
+
+
+// Миксин для переходов
+@mixin smooth-transition($duration: 0.3s) {
+    transition: all $duration ease;
+}
+
+
+body {
+    font-family: $font-base;
+    color: $main-header-color;
+
+    h1,
+    h2,
+    h3 {
+        font-family: $font-header;
+    }
+
+    a,
+    .nav-link,
+    .btn {
+        color: $main-header-color;
+        letter-spacing: 3px;
+        @include smooth-transition(0.6s);
+
+        &:hover {
+            color: $link-color;
+        }
+    }
+}
+
+.custom-shadow-double {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), -3px -3px 5px rgba(255, 255, 255, 0.3);
+    @include smooth-transition;
+
+    &:hover {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.section-nosotros,
+.pricing-item,
+.contact-form {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5), -3px -3px 15px rgba(255, 255, 255, 0.3);
+    @include smooth-transition(0.5s);
+
+    &:hover {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.carousel-item,
+.carousel-item img {
+    height: 80vh;
+    object-fit: cover;
+}
+
+.team-member {
+    @include smooth-transition;
+
+    &:hover {
+        box-shadow: inset 10px 10px 5px rgba(0, 0, 0, 0.75),
+            inset -10px -10px 5px rgba(12, 12, 12, 0.75);
+    }
+}
+
+.servicios {
+    background-image: url("https://images.pexels.com/photos/27406/pexels-photo-27406.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.service-item {
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    @include smooth-transition;
+}
+
+.pricing-item {
+    background: linear-gradient(0deg, rgba(30, 37, 43, 1) 70%, rgb(67, 67, 67) 100%);
+}
+
+.form-control {
+    box-shadow: inset -2px -2px 11px 1px rgba(0, 0, 0, 1);
+}
+
+::placeholder {
+    color: #b6b6b6 !important;
+}
