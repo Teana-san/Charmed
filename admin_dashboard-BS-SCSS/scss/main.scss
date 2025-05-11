@@ -1,0 +1,386 @@
+// Root variables -------------------------------------------------------
+$primary: #3B82F6;
+$primary-hover: #2563EB;
+$primary-light: #93C5FD;
+$primary-dark: #1D4ED8;
+
+$secondary: #6C757D;
+$success: #10B981;
+$info: #0EA5E9;
+$warning: #F59E0B;
+$danger: #EF4444;
+$light: #F8F9FA;
+$dark: #212529;
+
+// Utility colors ------------------------------------------------------
+$white: #ffffff;
+$text-default: #212529;
+
+// Button --------------------------------------------------------------
+$btn-color: $white;
+$btn-bg: $primary;
+$btn-border: $primary;
+$btn-hover-bg: $primary-hover;
+$btn-hover-border: $primary-hover;
+
+// Borders & backgrounds -----------------------------------------------
+$border-color: #dee2e6;
+$light-gray: $light;
+
+// Shadows
+$shadow-base: 0 2px 10px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+// Fonts system --------------------------------------------------------
+$font-family-sans-serif: 'Inter', sans-serif;
+// Fonts sizes ---------------------------------------------------------
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-sm: .875rem;
+
+// Theme color map for Bootstrap ----------------------------------------
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+// Import Bootstrap -------------------------------------------------------
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Global Component Overrides ---------------------------------------------
+
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  color: $btn-color;
+}
+
+// Sidebar ----------------------------------------------------------------
+.sidebar {
+  min-height: 100vh;
+
+  ul.nav {
+    li.nav-item {
+      a.nav-link {
+        display: block;
+        color: $white;
+        transition: all 0.4s ease-in-out;
+
+        i {
+          margin-right: .5rem;
+        }
+      }
+    }
+
+    li.nav-item:first-child {
+      a.nav-link {
+        font-size: 1.875rem;
+        text-align: center;
+
+        i {
+          font-size: 1.75rem;
+        }
+      }
+    }
+
+    li.nav-item:not(:first-child) {
+      a.nav-link {
+        font-size: 1.25rem;
+
+        &:hover {
+          background-color: $white;
+          color: $text-default;
+
+          i {
+            color: $text-default;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Help Card --------------------------------------------------------------
+.help-card {
+  border-radius: .5rem;
+  transition: all .3s ease;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-.3125rem);
+    box-shadow: $shadow-hover;
+  }
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Messages ----------------------------------------------------------------
+.message-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.message-item {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-light;
+  }
+}
+
+.card-header.inbox {
+  background-color: $primary;
+  color: $white;
+}
+
+.card-header.details {
+  background-color: $success;
+  color: $white;
+}
+
+.card-header.settings {
+  background-color: $warning;
+  color: $white;
+}
+
+// Products ---------------------------------------------------------------
+.product-card {
+  border: 1px solid $border-color;
+  border-radius: .5rem;
+  transition: all .3s ease;
+  height: 100%;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+
+  .product-image {
+    height: 200px;
+    object-fit: contain;
+  }
+}
+
+.filter-section {
+  background-color: $white;
+  border-right: 1px solid $border-color;
+  box-shadow: $shadow-base;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 992px) {
+    position: sticky;
+    top: 1rem;
+    height: calc(100vh - 2rem);
+    margin-bottom: 0;
+  }
+}
+
+.category-item {
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    background-color: $light-gray;
+  }
+
+  &.active {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+// Settings ----------------------------------------------------------------
+.settings-nav .nav-link {
+  color: $text-default;
+  padding: 1rem;
+
+  &:hover {
+    background-color: $light-gray;
+  }
+
+  &.active {
+    color: $primary;
+    background-color: rgba($primary, .1);
+    border-left: .1875rem solid $primary;
+  }
+}
+
+.avatar-upload {
+  position: relative;
+  max-width: 200px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Stock List -------------------------------------------------------------
+.stock-item {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+
+  @media (min-width: 992px) {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 991.98px) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    >div {
+      margin-bottom: 10px;
+
+      &::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.stock-header {
+  display: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: $light;
+  border-bottom: 2px solid $border-color;
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
+}
+
+.stock-image {
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+  }
+
+  @media (min-width: 992px) {
+    width: 10%;
+  }
+}
+
+.stock-title {
+  @media (min-width: 992px) {
+    width: 20%;
+  }
+}
+
+.stock-code {
+  @media (min-width: 992px) {
+    width: 10%;
+  }
+}
+
+.stock-current {
+  @media (min-width: 992px) {
+    width: 10%;
+  }
+}
+
+.stock-quantity {
+  @media (min-width: 992px) {
+    width: 20%;
+  }
+}
+
+.stock-date {
+  @media (min-width: 992px) {
+    width: 15%;
+  }
+}
+
+.stock-update {
+  @media (min-width: 992px) {
+    width: 7.5%;
+  }
+}
+
+.stock-admin {
+  @media (min-width: 992px) {
+    width: 7.5%;
+  }
+}
+
+.stock-container {
+  @media (min-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.stock-row {
+  @media (max-width: 991.98px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.stock-col {
+  @media (max-width: 991.98px) {
+    width: 50%;
+    padding: 0 10px;
+  }
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+
+  button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input {
+    width: 60px;
+    text-align: center;
+  }
+}
+
+// Loader -----------------------------------------------------------------
+@import 'loader';

@@ -1,8 +1,5 @@
 @charset "UTF-8";
-/* Переопределяем стандартные тени Bootstrap */
-/* Основная тень (shadow) */
-/* Маленькая тень (shadow-sm) */
-/* Большая тень (shadow-lg) */
+
 body {
   font-family: "Tinos", sans-serif;
   color: #f3f3f3;

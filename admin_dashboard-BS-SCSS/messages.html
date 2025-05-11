@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Semyon Smyslov">
+  <title>Mensajes - Admin Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Font Awesome (optional if needed) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="bg-light">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar Navigation -->
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <!-- Logo / Title -->
+            <li class="nav-item mb-3">
+              <a class="nav-link text-white" href="./index.html">
+                <i class="fa fa-rocket"></i>
+                CRM SYSTEM
+              </a>
+            </li>
+            <!-- Navigation Items -->
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">
+                <i class="fa fa-home"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./analytics.html">
+                <i class="fa fa-pie-chart"></i> Analítica
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./products.html">
+                <i class="fa fa-barcode"></i> Productos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./stock.html">
+                <i class="fa fa-cubes"></i> Inventario
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./clients.html">
+                <i class="fa fa-users"></i> Clientes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./messages.html">
+                <i class="fa fa-comment"></i> Mensajes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./help.html">
+                <i class="fa fa-question-circle"></i> Ayuda
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./settings.html">
+                <i class="fa fa-cog"></i> Ajustes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./api.html">
+                <i class="fa fa-lock"></i> API
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-sign-out"></i> Salir
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <!-- Topbar -->
+        <nav class="navbar navbar-light bg-white border-bottom">
+          <div class="container-fluid">
+            <button class="btn btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#sidebarMenu">
+              <i class="fa fa-bars"></i>
+            </button>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar mensajes" aria-label="Buscar">
+              <button class="btn btn-outline-success" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+            <div>
+              <img src="./assets/img/user.jpg" alt="User" class="rounded-circle" width="40" height="40">
+            </div>
+          </div>
+        </nav>
+
+        <h2 class="mt-4">Mensajes</h2>
+
+        <div class="row mt-4">
+          <!-- Left Column: Message List -->
+          <div class="col-md-6">
+            <!-- Tabs for Inbox, Sent, and Automated/System Messages -->
+            <ul class="nav nav-tabs" id="messagesTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="inbox-tab" data-bs-toggle="tab" data-bs-target="#inbox"
+                  type="button" role="tab" aria-controls="inbox" aria-selected="true">
+                  Bandeja de entrada
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="sent-tab" data-bs-toggle="tab" data-bs-target="#sent" type="button"
+                  role="tab" aria-controls="sent" aria-selected="false">
+                  Enviados
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="system-tab" data-bs-toggle="tab" data-bs-target="#system" type="button"
+                  role="tab" aria-controls="system" aria-selected="false">
+                  Automáticos
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="messagesTabContent">
+              <!-- Inbox Tab -->
+              <div class="tab-pane fade show active" id="inbox" role="tabpanel" aria-labelledby="inbox-tab">
+                <div class="card mt-3">
+                  <div class="card-header inbox">
+                    Filtros y Acciones
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <div>
+                        <button class="btn btn-sm btn-light">No leídos</button>
+                        <button class="btn btn-sm btn-light">Destacados</button>
+                        <button class="btn btn-sm btn-light">Archivados</button>
+                      </div>
+                      <div>
+                        <select class="form-select form-select-sm">
+                          <option selected>Ordenar por fecha</option>
+                          <option value="1">Remitente</option>
+                          <option value="2">Estado</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="message-list">
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="selectAllInbox">
+                        <label class="form-check-label pointer" for="selectAllInbox">
+                          Seleccionar todos
+                        </label>
+                      </div>
+                      <!-- Message item -->
+                      <div class="form-check border-bottom pb-2 mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="message1">
+                        <label class="form-check-label pointer d-flex justify-content-between" for="message1">
+                          <span>
+                            <strong>Juan Pérez</strong> - Consulta sobre pedido
+                            <span class="badge bg-primary ms-2">Nuevo</span>
+                          </span>
+                          <small>Hace 2 horas</small>
+                        </label>
+                      </div>
+                      <div class="form-check border-bottom pb-2 mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="message2">
+                        <label class="form-check-label pointer d-flex justify-content-between" for="message2">
+                          <span>
+                            <strong>María López</strong> - Solicitud de información
+                          </span>
+                          <small>Ayer</small>
+                        </label>
+                      </div>
+                      <!-- More items -->
+                    </div>
+                    <div class="mt-2">
+                      <button class="btn btn-sm btn-outline-primary">Marcar como leído</button>
+                      <button class="btn btn-sm btn-outline-primary">Marcar como no leído</button>
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                      <button class="btn btn-sm btn-outline-secondary">Archivar</button>
+                      <button class="btn btn-sm btn-outline-warning">Destacar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sent Tab -->
+              <div class="tab-pane fade" id="sent" role="tabpanel" aria-labelledby="sent-tab">
+                <div class="card mt-3">
+                  <div class="card-header inbox">
+                    Enviados - Filtros
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <div>
+                        <button class="btn btn-sm btn-light">Filtrar</button>
+                      </div>
+                      <div>
+                        <select class="form-select form-select-sm">
+                          <option selected>Ordenar por fecha</option>
+                          <option value="1">Remitente</option>
+                          <option value="2">Estado</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="message-list">
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="selectAllSent">
+                        <label class="form-check-label pointer" for="selectAllSent">
+                          Seleccionar todos
+                        </label>
+                      </div>
+                      <!-- Sent message item -->
+                      <div class="form-check border-bottom pb-2 mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="sentMessage1">
+                        <label class="form-check-label pointer d-flex justify-content-between" for="sentMessage1">
+                          <span>
+                            <strong>Soporte</strong> - Respuesta a tu consulta
+                          </span>
+                          <small>Hace 3 horas</small>
+                        </label>
+                      </div>
+                      <!-- More sent message items... -->
+                    </div>
+                    <div class="mt-2">
+                      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                      <button class="btn btn-sm btn-outline-secondary">Archivar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- System Messages Tab -->
+              <div class="tab-pane fade" id="system" role="tabpanel" aria-labelledby="system-tab">
+                <div class="card mt-3">
+                  <div class="card-header inbox">
+                    Notificaciones del sistema
+                  </div>
+                  <div class="card-body">
+                    <div class="border-bottom pb-2 mb-2">
+                      <strong>Seguridad</strong> - Alerta de inicio de sesión inusual
+                      <small class="d-block text-muted">02/04/2025, 08:45</small>
+                    </div>
+                    <div class="border-bottom pb-2 mb-2">
+                      <strong>Sistema</strong> - Actualización completada
+                      <small class="d-block text-muted">01/04/2025, 17:30</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Message Details Panel -->
+          <div class="col-md-6">
+            <div class="card mt-3">
+              <div class="card-header details d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Detalles del mensaje</h5>
+                <div>
+                  <button class="btn btn-sm btn-outline-light">Ver perfil</button>
+                  <button class="btn btn-sm btn-outline-light">Bloquear / Reportar</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <h6>De: <strong>Juan Pérez</strong></h6>
+                <small class="text-muted">Fecha: 02/04/2025 - 10:15</small>
+                <hr>
+                <p>Hola, quisiera confirmar el estado de mi pedido. Adjunto encontrará la captura de pantalla del error
+                  encontrado. Gracias.</p>
+                <!-- Attachments -->
+                <div class="mb-3">
+                  <strong>Adjuntos:</strong>
+                  <a href="#" class="btn btn-sm btn-outline-secondary ms-2">imagen.jpg</a>
+                </div>
+                <!-- Quick Reply -->
+                <form>
+                  <div class="mb-2">
+                    <textarea class="form-control" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-reply"></i> Responder
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Messaging Settings -->
+        <div class="card mt-4 mb-5">
+          <div class="card-header settings">
+            Configuraciones de Mensajes
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" id="notifSwitch" checked>
+                <label class="form-check-label" for="notifSwitch">Habilitar notificaciones</label>
+              </div>
+              <!-- Save setting -->
+              <button type="submit" class="btn btn-success btn-sm">Guardar configuraciones</button>
+            </form>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Lottie Animation Loader -->
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="./js/loader.js"></script>
+</body>
+
+</html>
